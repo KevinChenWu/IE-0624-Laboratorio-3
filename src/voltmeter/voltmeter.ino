@@ -77,6 +77,11 @@ void loop() {
     }
     v0 /= n;
     v0 = sqrt(v0) * 48/5;
+    if ((v0*sqrt(2)) >= 20.0) {
+      digitalWrite(4, HIGH);
+    } else {
+      digitalWrite(4, LOW);
+    }
     Serial.print(String(v0, 2) + "Vac ");
     display.setCursor(0, 0);
     display.print("V1: ");
@@ -87,6 +92,11 @@ void loop() {
     TIMSK1 &= ~(1 << OCIE1A);
     v0 = analogRead(A0) * 5.0000/1023;
     v0 = v0 * 48/5 - 24;
+    if ((v0 >= 20.0) | (v0 <= -20.0)) {
+      digitalWrite(4, HIGH);
+    } else {
+      digitalWrite(4, LOW);
+    }
     Serial.print(String(v0, 2) + "Vdc ");
     display.setCursor(0, 0);
     display.print("V1: ");
@@ -107,6 +117,11 @@ void loop() {
     }
     v1 /= n;
     v1 = sqrt(v1) * 48/5;
+    if ((v1*sqrt(2)) >= 20.0) {
+      digitalWrite(5, HIGH);
+    } else {
+      digitalWrite(5, LOW);
+    }
     Serial.print(String(v1, 2) + "Vac ");
     display.setCursor(0, 12);
     display.print("V2: ");
@@ -117,6 +132,11 @@ void loop() {
     TIMSK1 &= ~(1 << OCIE1A);
     v1 = analogRead(A1) * 5.0000/1023;
     v1 = v1 * 48/5 - 24;
+    if ((v1 >= 20.0) | (v1 <= -20.0)) {
+      digitalWrite(5, HIGH);
+    } else {
+      digitalWrite(5, LOW);
+    }
     Serial.print(String(v1, 2) + "Vdc ");
     display.setCursor(0, 12);
     display.print("V2: ");
@@ -137,6 +157,11 @@ void loop() {
     }
     v2 /= n;
     v2 = sqrt(v2) * 48/5;
+    if ((v2*sqrt(2)) >= 20.0) {
+      digitalWrite(6, HIGH);
+    } else {
+      digitalWrite(6, LOW);
+    }
     Serial.print(String(v2, 2) + "Vac ");
     display.setCursor(0, 24);
     display.print("V3: ");
@@ -147,6 +172,11 @@ void loop() {
     TIMSK1 &= ~(1 << OCIE1A);
     v2 = analogRead(A2) * 5.0000/1023;
     v2 = v2 * 48/5 - 24;
+    if ((v2 >= 20.0) | (v2 <= -20.0)) {
+      digitalWrite(6, HIGH);
+    } else {
+      digitalWrite(6, LOW);
+    }
     Serial.print(String(v2, 2) + "Vdc ");
     display.setCursor(0, 24);
     display.print("V3: ");
@@ -167,6 +197,11 @@ void loop() {
     }
     v3 /= n;
     v3 = sqrt(v3) * 48/5;
+    if ((v3*sqrt(2)) >= 20.0) {
+      digitalWrite(7, HIGH);
+    } else {
+      digitalWrite(7, LOW);
+    }
     Serial.println(String(v3, 2) + "Vac");
     display.setCursor(0, 36);
     display.print("V4: ");
@@ -177,6 +212,11 @@ void loop() {
     TIMSK1 &= ~(1 << OCIE1A);
     v3 = analogRead(A3) * 5.0000/1023;
     v3 = v3 * 48/5 - 24;
+    if ((v3 >= 20.0) | (v3 <= -20.0)) {
+      digitalWrite(7, HIGH);
+    } else {
+      digitalWrite(7, LOW);
+    }
     Serial.println(String(v3, 2) + "Vdc");
     display.setCursor(0, 36);
     display.print("V4: ");
@@ -184,5 +224,4 @@ void loop() {
     display.print(" Vdc");
   }
   display.display();
-  //delay(1000);
 }
