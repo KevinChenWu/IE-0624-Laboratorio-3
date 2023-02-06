@@ -43,7 +43,7 @@ void setup() {
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
 
-  Serial.println("V1 V2 V3 V4");
+  Serial.println("V1,V2,V3,V4");
 
   display.begin();
   display.clearDisplay();
@@ -87,7 +87,7 @@ void loop() {
     } else {
       digitalWrite(4, LOW);
     }
-    Serial.print(String(v0, 2) + "Vac ");
+    Serial.print(String(v0, 2) + "Vac,");
     display.setCursor(0, 0);
     display.print("V1: ");
     display.print(String(v0, 2));
@@ -102,7 +102,7 @@ void loop() {
     } else {
       digitalWrite(4, LOW);
     }
-    Serial.print(String(v0, 2) + "Vdc ");
+    Serial.print(String(v0, 2) + "Vdc,");
     display.setCursor(0, 0);
     display.print("V1: ");
     display.print(String(v0, 2));
@@ -127,7 +127,7 @@ void loop() {
     } else {
       digitalWrite(5, LOW);
     }
-    Serial.print(String(v1, 2) + "Vac ");
+    Serial.print(String(v1, 2) + "Vac,");
     display.setCursor(0, 12);
     display.print("V2: ");
     display.print(String(v1, 2));
@@ -142,7 +142,7 @@ void loop() {
     } else {
       digitalWrite(5, LOW);
     }
-    Serial.print(String(v1, 2) + "Vdc ");
+    Serial.print(String(v1, 2) + "Vdc,");
     display.setCursor(0, 12);
     display.print("V2: ");
     display.print(String(v1, 2));
@@ -167,7 +167,7 @@ void loop() {
     } else {
       digitalWrite(6, LOW);
     }
-    Serial.print(String(v2, 2) + "Vac ");
+    Serial.print(String(v2, 2) + "Vac,");
     display.setCursor(0, 24);
     display.print("V3: ");
     display.print(String(v2, 2));
@@ -182,7 +182,7 @@ void loop() {
     } else {
       digitalWrite(6, LOW);
     }
-    Serial.print(String(v2, 2) + "Vdc ");
+    Serial.print(String(v2, 2) + "Vdc,");
     display.setCursor(0, 24);
     display.print("V3: ");
     display.print(String(v2, 2));
