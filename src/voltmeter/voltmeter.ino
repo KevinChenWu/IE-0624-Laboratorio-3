@@ -38,6 +38,11 @@ void setup() {
   pinMode(2, INPUT);
   pinMode(3, INPUT);
 
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+
   Serial.println("V1 V2 V3 V4");
 
   display.begin();
